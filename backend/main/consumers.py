@@ -9,8 +9,11 @@ class VideoStreamConsumer(WebsocketConsumer):
     def disconnect(self, close_code):
         pass
 
-    def receive(self, video_data):
-        video_data_json = json.loads(video_data)
-        frame = video_data_json["frame"]
+    def receive(self, text_data):
+        data = json.loads(text_data)
+        jpeg_base64 = data.get('jpeg_base64', None)
+        counter = data.get('counter')
 
-        self.send(video_data=json.dumps({"message": "Frame received"}))
+        if jpeg_base64:
+            self.send(text_data=json.dumps({"message": "Frame received"}))
+            print(counter)
