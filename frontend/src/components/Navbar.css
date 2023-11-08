@@ -1,0 +1,29 @@
+/* Navbar.css */
+
+nav {
+  background-color: #333; /* Background color for the navbar */
+  color: #fff; /* Text color */
+  padding: 10px; /* Adjust the padding as needed */
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+}
+
+li {
+  margin-right: 20px; /* Adjust the margin between list items as needed */
+}
+
+a {
+  text-decoration: none;
+  color: #fff; /* Link text color */
+  font-weight: bold;
+  transition: color 0.3s; /* Smooth color transition on hover */
+
+  /* Style the link on hover */
+  &:hover {
+    color: #ff6600; /* Change the link text color on hover */
+  }
+}
